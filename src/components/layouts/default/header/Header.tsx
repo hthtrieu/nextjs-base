@@ -34,11 +34,11 @@ export const Header = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        "fixed inset-x-0 top-0 z-[100] border-none transition-all",
+        "fixed inset-x-0 top-0 z-[100] border-none transition-all ",
         {
           "bg-transparent": isHomePage && !scrolling,
           "bg-white/80 shadow backdrop-blur supports-[backdrop-filter]:bg-white/75":
-            !isHomePage || scrolling,
+            isHomePage || scrolling,
           "bg-header-dark bg-white  supports-[backdrop-filter]:bg-header-dark":
             isHomePage && scrolling,
         },

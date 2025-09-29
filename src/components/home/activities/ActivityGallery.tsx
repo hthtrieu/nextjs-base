@@ -4,6 +4,7 @@ import { MaxWidthWrapper } from "@/components/common/MaxWidthWrapper";
 import { useTrans } from "@/hooks/useTrans";
 import ActivityCard from "./ActivityCard";
 import { motion } from "framer-motion";
+import mockActivities from "./mock/mockActivities.json";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -20,8 +21,8 @@ export const ActivityGallery = () => {
             {t("activities.title")}
           </h1>
         </div>
-        <div className="flex gap-2 md:gap-4 flex-wrap justify-center">
-          {Array.from({ length: 5 }).map((_, index) => (
+        <div className="flex flex-row flex-wrap justify-center gap-2 ">
+          {mockActivities.map((activity, index) => (
             <motion.div
               key={index}
               initial="hidden"
@@ -29,12 +30,12 @@ export const ActivityGallery = () => {
               viewport={{ amount: 0.5, once: true }}
               variants={fadeUp}
               transition={{ delay: index * 0.3 }}
-              className="w-2/5 md:w-1/4"
+              className="w-2/5 md:w-1/3"
             >
               <ActivityCard
                 activity={{
-                  name: "Hai Truong",
-                  image: "https://i.pravatar.cc/300",
+                  name: activity?.name,
+                  image: activity?.image,
                 }}
               />
             </motion.div>

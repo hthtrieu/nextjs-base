@@ -5,6 +5,7 @@ import {
   Wix_Madefor_Text,
   Wix_Madefor_Display,
 } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Suspense } from "react";
 import { getServerTranslations } from "@/i18n";
@@ -22,14 +23,23 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const wixMadeforText = Wix_Madefor_Text({
-  variable: "--font-wix-madefor-text",
-  subsets: ["latin"],
-});
+// const wixMadeforText = Wix_Madefor_Text({
+//   variable: "--font-wix-madefor-text",
+//   subsets: ["latin"],
+// });
 
 const wixMadeforDisplay = Wix_Madefor_Display({
   variable: "--font-wix-madefor-display",
   subsets: ["latin"],
+});
+const wixMadeforText = localFont({
+  src: [
+    {
+      path: "../fonts/WixMadeforText-VariableFont_wght.ttf",
+      style: "normal",
+    },
+  ],
+  variable: "--font-wix-madefor-text",
 });
 
 export const metadata: Metadata = {
