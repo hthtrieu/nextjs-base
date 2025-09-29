@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Activity 1",
+    "description": "Description 1",
+    "image": "/assets/images/activities/activity1.jpg"
+  },
+  {
+    "id": 1,
+    "name": "Activity 1",
+    "description": "Description 1",
+    "image": "/assets/images/activities/activity2.jpg"
+  },
+  {
+    "id": 1,
+    "name": "Activity 1",
+    "description": "Description 1",
+    "image": "/assets/images/activities/activity3.jpg"
+  },
+  {
+    "id": 1,
+    "name": "Activity 1",
+    "description": "Description 1",
+    "image": "/assets/images/activities/activity4.jpg"
+  },
+  {
+    "id": 1,
+    "name": "Activity 1",
+    "description": "Description 1",
+    "image": "/assets/images/activities/activity5.jpg"
+  },
+  {
+    "id": 1,
+    "name": "Activity 1",
+    "description": "Description 1",
+    "image": "/assets/images/activities/activity6.jpg"
+  }
+]

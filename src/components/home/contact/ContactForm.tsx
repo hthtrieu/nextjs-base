@@ -75,6 +75,25 @@ const ContactForm = () => {
                 placeholder={t("contact.form.phone.placeholder")}
                 required={true}
               />
+              <div className="flex gap-2 items-start">
+                <FormInput
+                  control={form.control}
+                  fieldName="acceptPolicy"
+                  type={Constants.INPUT_TYPE.CHECKBOX}
+                  label={""}
+                  placeholder={t("contact.form.phone.placeholder")}
+                  // classNameInput="m-0"
+                  // classNameWrapper="m-0"
+                  className="pt-1"
+                  required={true}
+                />
+                <p className="text-sm">
+                  Bằng việc đăng ký thông tin, bạn đồng ý cho phép Starfish
+                  Center liên lạc thông qua các hình thức: cuộc gọi, tin nhắn
+                  nhằm mục đích tư vấn các chương trình đào tạo và dịch vụ của
+                  chúng tôi.
+                </p>
+              </div>
               <div className="w-full flex justify-center md:justify-start">
                 <Button className="h-12 rounded-3xl min-w-fit min-[1920px]:w-48 font-bold text-lg bg-sky-900 text-white hover:bg-red-700 transition delay-150 duration-300 ease-in-out">
                   <span>{t("header.register_button")}</span>

@@ -16,12 +16,21 @@ export const HeroCarousel = () => {
       }}
     >
       <CarouselContent className="h-screen max-h-[745px]">
+        {/* <CarouselItem className="overflow-hidden">
+          <Hero
+            data={{
+              title: "Home",
+              description: "Home description",
+              homeBanner: "/assets/backgrounds/hero1.png",
+            }}
+          />
+        </CarouselItem> */}
         <CarouselItem className="overflow-hidden">
           <Hero
             data={{
               title: "Home",
               description: "Home description",
-              homeBanner: "/assets/backgrounds/hero.jpg",
+              homeBanner: "/assets/backgrounds/hero2.jpg",
             }}
           />
         </CarouselItem>
@@ -30,16 +39,7 @@ export const HeroCarousel = () => {
             data={{
               title: "Home",
               description: "Home description",
-              homeBanner: "/assets/backgrounds/hero.jpg",
-            }}
-          />
-        </CarouselItem>
-        <CarouselItem className="overflow-hidden">
-          <Hero
-            data={{
-              title: "Home",
-              description: "Home description",
-              homeBanner: "/assets/backgrounds/hero.jpg",
+              homeBanner: "/assets/backgrounds/hero3.png",
             }}
           />
         </CarouselItem>
