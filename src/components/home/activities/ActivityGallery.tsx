@@ -30,7 +30,7 @@ export const ActivityGallery = () => {
               viewport={{ amount: 0.5, once: true }}
               variants={fadeUp}
               transition={{ delay: index * 0.3 }}
-              className="w-2/5 md:w-1/3"
+              className="w-full md:w-1/3"
             >
               <ActivityCard
                 activity={{

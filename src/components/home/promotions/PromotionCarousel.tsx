@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/carousel";
 import { PromotionCard } from "./PromotionCard";
 import { motion } from "framer-motion";
-
+import mockPromotions from "./mock/promotion.json";
 export const PromotionCarousel = () => {
   const { t } = useTrans();
   return (
@@ -39,14 +39,13 @@ export const PromotionCarousel = () => {
           className="w-full"
         >
           <CarouselContent>
-            {Array.from({ length: 5 }).map((_, index) => (
+            {mockPromotions.map((promotion, index) => (
               <CarouselItem key={index} className="md:basis-1/1 lg:basis-1/1">
                 <div className="p-2">
                   <PromotionCard
-                    facility={{
-                      name: "Hai Truong",
-                      image: "https://i.pravatar.cc/1080",
-                      award: "lorem ipsum",
+                    promotion={{
+                      name: promotion.name,
+                      image: promotion.image,
                     }}
                   />
                 </div>

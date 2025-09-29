@@ -13,7 +13,7 @@ export const CourseCard = ({
 
   return (
     <Card className="group w-full aspect-3/4 !p-0 overflow-clip gap-0  !max-h-[520px] md:h-fit">
-      <CardContent className="!p-0 h-10/12 !m-0 relative cursor-pointer">
+      <CardContent className="!p-0 h-9/12 max-h-10/12 !m-0 relative cursor-pointer">
         <img
           src={course.image}
           alt={course.name}
@@ -30,7 +30,7 @@ export const CourseCard = ({
       </CardContent>
 
       <CardFooter
-        className="w-full h-4/12 bg-sky-800 flex-col
+        className="w-full h-3/12 bg-sky-800 flex-col
           transition-colors duration-500 !items-start p-4 cursor-pointer hover:transform translate-y-0"
       >
         <p className="font-bold text-lg md:text-2xl text-white text-start">

@@ -38,21 +38,24 @@ export const Footer = () => {
 
             <div className="md:hidden" id="social-sm">
               <div className="flex gap-x-4">
-                <Link href="https://www.facebook.com/profile.php?id=100057569344901">
+                <Link
+                  href="https://www.facebook.com/profile.php?id=100057569344901"
+                  target="_blank"
+                >
                   <img
                     src="/assets/icons/facebook.svg"
                     className="w-6 h-6"
                     alt="facebook"
                   />
                 </Link>
-                <Link href="https://www.tiktok.com/">
+                <Link href="https://www.tiktok.com/" target="_blank">
                   <img
                     src="/assets/icons/tiktok.svg"
                     className="w-6 h-6"
                     alt="tiktok"
                   />
                 </Link>
-                <Link href="https://www.linkedin.com/">
+                <Link href="https://zalo.me/0939027417" target="_blank">
                   <img
                     src="/assets/icons/zalo.svg"
                     className="w-6 h-6"

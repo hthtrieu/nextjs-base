@@ -31,11 +31,9 @@ export const HomeContainer = () => {
       <div className="my-8" id="facilities">
         <FacilityCarousel />
       </div>
-      <MaxWidthWrapper>
-        <div className="my-8" id="contact">
-          <Contact />
-        </div>
-      </MaxWidthWrapper>
+      <div className="my-8" id="contact">
+        <Contact />
+      </div>
     </>
   );
 };
