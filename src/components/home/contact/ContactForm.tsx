@@ -11,13 +11,14 @@ import { Button } from "@/components/ui/button";
 import { RegisterCourseButton } from "@/components/layouts/default/header/RegisterCourseButton";
 import { useTrans } from "@/hooks/useTrans";
 import { Card, CardContent } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 const ContactForm = () => {
   const { t } = useTrans();
   // Define schema using Zod
   const formSchema = z.object({
     name: z.string().min(2, { message: "Required" }),
-    email: z.string().email({ message: "Invalid email" }),
+    // email: z.string().email({ message: "Invalid email" }),
     message: z.string().min(10, { message: "Required" }),
     phone: z.string().min(10, { message: "Required" }),
   });
@@ -38,10 +39,15 @@ const ContactForm = () => {
     // onSubmitForm(values);
   };
   return (
-    <Card>
-      <CardContent>
+    <Card className="bg-slate-500/50 backdrop-blur-md shadow-lg">
+      <CardContent className="bg-transparent">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(submitForm)}>
+          <form
+            onSubmit={form.handleSubmit(submitForm)}
+            // className={cn(
+            //   "border border-opacity-20 bg-white bg-opacity-50 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] rounded-3xl md:p-4"
+            // )}
+          >
             <div className="w-full space-y-4">
               <FormInput
                 control={form.control}
@@ -49,30 +55,32 @@ const ContactForm = () => {
                 type={Constants.INPUT_TYPE.TEXT}
                 label={t("contact.form.name.label")}
                 placeholder={t("contact.form.name.placeholder")}
+                classNameInput="bg-inherit"
                 required={true}
               />
-              <FormInput
+              {/* <FormInput
                 control={form.control}
                 fieldName="email"
                 type={Constants.INPUT_TYPE.EMAIL}
                 label={t("contact.form.email.label")}
                 placeholder={t("contact.form.email.placeholder")}
                 required={true}
-              />
-              <FormInput
-                control={form.control}
-                fieldName="message"
-                type={Constants.INPUT_TYPE.TEXT}
-                label={t("contact.form.message.label")}
-                placeholder={t("contact.form.message.placeholder")}
-                required={true}
-              />
+              /> */}
               <FormInput
                 control={form.control}
                 fieldName="phone"
                 type={Constants.INPUT_TYPE.TEXT}
                 label={t("contact.form.phone.label")}
                 placeholder={t("contact.form.phone.placeholder")}
+                classNameInput="bg-inherit"
+                required={true}
+              />
+              <FormInput
+                control={form.control}
+                fieldName="message"
+                type={Constants.INPUT_TYPE.TEXTAREA}
+                label={t("contact.form.message.label")}
+                placeholder={t("contact.form.message.placeholder")}
                 required={true}
               />
               <div className="flex gap-2 items-start">
