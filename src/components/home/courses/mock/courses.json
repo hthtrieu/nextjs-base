@@ -4,7 +4,7 @@
     "slug": "tieu-hoc",
     "name": "Kids English",
     "description": "Tiếng anh cho trẻ em (3-6) tuổi",
-    "image": "/assets/images/courses/course_1.png",
+    "image": "/assets/images/courses/kids.jpg",
     "status": 1,
     "created_at": "2021-01-01 00:00:00",
     "updated_at": "2021-01-01 00:00:00"
@@ -14,7 +14,7 @@
     "slug": "giao-tiep-va-phat-am",
     "name": "Giao tiếp và phát âm",
     "description": "Giao tiếp và phát âm với Giáo viên nước ngoài",
-    "image": "/assets/images/courses/course_1.png",
+    "image": "/assets/images/courses/teacher.jpg",
     "status": 1,
     "created_at": "2021-01-01 00:00:00"
   },
@@ -23,7 +23,7 @@
     "slug": "bo-tro-tieng-anh",
     "name": "Bổ trợ Tiếng Anh",
     "description": "Bổ trợ, nâng cao kiến thức dành cho học sinh THCS, THPT",
-    "image": "/assets/images/courses/course_1.png",
+    "image": "/assets/images/courses/student.jpg",
     "status": 1,
     "created_at": "2021-01-01 00:00:00"
   },
@@ -32,7 +32,7 @@
     "slug": "luyen-thi",
     "name": "Luyện thi tuyển sinh",
     "description": "Luyện thi tuyển sinh 10. Luyện thi Đại học khối D, A1, ...",
-    "image": "/assets/images/courses/course_1.png",
+    "image": "/assets/images/courses/exam.jpg",
     "status": 1,
     "created_at": "2021-01-01 00:00:00"
   },
@@ -41,7 +41,7 @@
     "slug": "luyen-thi-chung-chi",
     "name": "Luyện thi chứng chỉ",
     "description": "Luyện thi chứng chỉ TOEIC, IELTS, TOEFL, ...",
-    "image": "/assets/images/courses/course_1.png",
+    "image": "/assets/images/courses/english.jpg",
     "status": 1,
     "created_at": "2021-01-01 00:00:00"
   },
@@ -50,7 +50,7 @@
     "slug": "tieng-anh-cho-nguoi-di-lam",
     "name": "Business English",
     "description": "Tiếng anh giao tiếp cho người đi làm",
-    "image": "/assets/images/courses/course_1.png",
+    "image": "/assets/images/courses/business_man.jpg",
     "status": 1
   }
 ]
