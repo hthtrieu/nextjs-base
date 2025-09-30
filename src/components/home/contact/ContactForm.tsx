@@ -8,19 +8,28 @@ import { z } from "zod";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Constants } from "@/lib/constant";
 import { Button } from "@/components/ui/button";
-import { RegisterCourseButton } from "@/components/layouts/default/header/RegisterCourseButton";
 import { useTrans } from "@/hooks/useTrans";
 import { Card, CardContent } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 
 const ContactForm = () => {
   const { t } = useTrans();
   // Define schema using Zod
   const formSchema = z.object({
-    name: z.string().min(2, { message: "Required" }),
+    name: z
+      .string({ message: t("form.required") })
+      .min(2, { message: t("form.invalid_length") }),
     // email: z.string().email({ message: "Invalid email" }),
-    message: z.string().min(10, { message: "Required" }),
-    phone: z.string().min(10, { message: "Required" }),
+    phone: z
+      .string({ message: t("form.required") })
+      .min(10, { message: t("form.invalid_phone") }),
+    message: z
+      .string({ message: t("form.required") })
+      .min(2, { message: t("form.invalid_message") }),
+    acceptPolicy: z
+      .boolean({ message: t("form.policy_unchecked") })
+      .refine((value) => value, {
+        message: t("form.policy_unchecked"),
+      }),
   });
 
   // Infer form data type from Zod schema
@@ -35,12 +44,33 @@ const ContactForm = () => {
   });
 
   // Submit handler
-  const submitForm: SubmitHandler<FormData> = (values) => {
-    // onSubmitForm(values);
+  const submitForm: SubmitHandler<FormData> = async (values) => {
+    console.log(values);
+    const data = {
+      ...values,
+      submitDate: new Date().toLocaleString("vi-VN", {
+        timeZone: "Asia/Bangkok",
+      }),
+    };
+    try {
+      const res = await fetch("/api/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const dataRes = await res.json();
+      if (!res.ok) throw new Error(dataRes.error || "Submit failed");
+      // setMsg("Đã gửi thành công!");
+      // form.reset();
+    } catch (err: any) {
+      // setMsg(err.message || "Có lỗi xảy ra");
+    } finally {
+      // setLoading(false);
+    }
   };
   return (
-    <Card className="bg-slate-500/50 backdrop-blur-md shadow-lg">
-      <CardContent className="bg-transparent">
+    <Card className="bg-slate-400">
+      <CardContent className="">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(submitForm)}
@@ -103,7 +133,7 @@ const ContactForm = () => {
                 </p>
               </div>
               <div className="w-full flex justify-center md:justify-start">
-                <Button className="h-12 rounded-3xl min-w-fit min-[1920px]:w-48 font-bold text-lg bg-sky-900 text-white hover:bg-red-700 transition delay-150 duration-300 ease-in-out">
+                <Button className="h-12 rounded-3xl min-w-fit min-[1920px]:w-64 font-bold text-lg bg-sky-900 text-white hover:bg-red-700 transition delay-150 duration-300 ease-in-out">
                   <span>{t("header.register_button")}</span>
                 </Button>{" "}
               </div>

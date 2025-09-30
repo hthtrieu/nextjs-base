@@ -39,10 +39,10 @@
     "title": "Cơ sở vật chất"
   },
   "activities": {
-    "title": "Hoạt động ở chúng tôi"
+    "title": "Hoạt động ở Starfish"
   },
   "contact": {
-    "title": "Liên hệ",
+    "title": "Đăng ký để nhận tư vấn",
     "form": {
       "name": {
         "label": "Họ tên",
@@ -61,5 +61,16 @@
         "placeholder": "Nhập số điện thoại"
       }
     }
+  },
+  "form": {
+    "submit": "Gửi",
+    "required": "Vui lòng điền thông tin vào trường này",
+    "invalid_email": "Email không hợp lệ",
+    "invalid_phone": "Số điện thoại không hợp lệ",
+    "invalid_message": "Vui lòng nhập nội dung",
+    "success": "Gửi thông tin thành công",
+    "error": "Gửi thông tin thất bại",
+    "policy_unchecked": "Vui lòng đọc và đồng ý với chính sách của chúng tôi",
+    "invalid_length": "Vui lòng nhập đủ thông tin"
   }
 }
