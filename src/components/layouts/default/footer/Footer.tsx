@@ -70,7 +70,7 @@ export const Footer = () => {
               <h3 className="text-xl underline">Liên hệ</h3>
               <span>Email: centerstarfish34@gmail.com</span>
               <span>Phone: 0939027417</span>
-              <span>Địa chỉ: 44 Nguyễn Thần Hiến, Ngữ Hành Sơn, Đà Nẵng</span>
+              <span>Địa chỉ: 34 Nguyễn Thần Hiến, Ngữ Hành Sơn, Đà Nẵng</span>
             </div>
           </div>
           <div className="hidden md:block" id="social-md">
@@ -89,7 +89,7 @@ export const Footer = () => {
                   alt="tiktok"
                 />
               </Link>
-              <Link href="https://www.linkedin.com/">
+              <Link href="https://zalo.me/0939027417">
                 <img
                   src="/assets/icons/zalo.svg"
                   className="w-8 h-8 text-white"
