@@ -3,6 +3,18 @@
     "id": 1,
     "name": "Promotion 1",
     "description": "Promotion 1 description",
-    "image": "/assets/images/promotions/freetest.png"
+    "image": "/assets/images/promotions/desktop/1.png"
+  },
+  {
+    "id": 1,
+    "name": "Promotion ",
+    "description": "Promotion 1 description",
+    "image": "/assets/images/promotions/desktop/2.png"
+  },
+  {
+    "id": 1,
+    "name": "Promotion 1",
+    "description": "Promotion 1 description",
+    "image": "/assets/images/promotions/desktop/3.png"
   }
 ]
