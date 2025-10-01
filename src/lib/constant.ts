@@ -17,7 +17,7 @@ export class Constants {
   static HEADER_URLS = [
     {
       label: "header.label.about_us",
-      href: "#about-us",
+      href: "#about",
     },
 
     {

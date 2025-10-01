@@ -14,7 +14,7 @@ export const HomeContainer = () => {
     <>
       <HeroCarousel />
       <MaxWidthWrapper>
-        <div className="my-8" id="about-us">
+        <div className="my-8" id="about">
           <About />
         </div>
         <div className="my-8" id="courses">
