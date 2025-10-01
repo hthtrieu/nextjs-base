@@ -1,3 +1,4 @@
+import LocalBusinessJsonLd from "@/app/seo/LocalBusinessJsonLd";
 import { MaxWidthWrapper } from "@/components/common/MaxWidthWrapper";
 import { HeroCarousel } from "@/components/hero/HeroCarousel";
 import About from "@/components/home/about-us/About";
@@ -12,6 +13,7 @@ import React from "react";
 export const HomeContainer = () => {
   return (
     <>
+      <LocalBusinessJsonLd />
       <HeroCarousel />
       <MaxWidthWrapper>
         <div className="my-8" id="about">

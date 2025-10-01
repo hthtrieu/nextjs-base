@@ -44,9 +44,15 @@ const wixMadeforText = localFont({
   variable: "--font-wix-madefor-text",
 });
 
-export const metadata: Metadata = {
-  title: "Starfish English Center",
-  description: "To be Your wings to be the future",
+export const metadata = {
+  metadataBase: new URL("https://starfish-center.com"),
+  title: {
+    default: "Trung tâm ngoại ngữ Starfish",
+    template: "%s | Starfish Center",
+  },
+  description:
+    "Starfish Center – 10+ năm đồng hành 5.000+ học viên. Luyện thi, giao tiếp, phát âm, IELTS/TOEIC, lớp cuối tuần linh hoạt. Test đầu vào miễn phí & ưu đãi đăng ký.",
+  alternates: { canonical: "https://starfish-center.com/" },
 };
 
 export default async function RootLayout({

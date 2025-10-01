@@ -28,9 +28,9 @@ export const FacilityCarousel = () => {
       // transition={{ duration: 0.5, ease: "easeInOut" }}
     >
       <div className="flex flex-col gap-4 md:gap-8">
-        <h1 className="font-bold text-xl md:text-4xl text-sky-800 text-center">
+        <h2 className="font-bold text-xl md:text-4xl text-sky-800 text-center">
           {t("facilities.title")}
-        </h1>
+        </h2>
         <Carousel
           opts={{
             align: "center",

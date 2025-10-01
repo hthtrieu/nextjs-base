@@ -17,9 +17,9 @@ export const ActivityGallery = () => {
     <div className="bg-gradient-to-tl bg-yellow-400 w-full h-fit py-4 md:py-16">
       <MaxWidthWrapper>
         <div>
-          <h1 className="font-bold text-xl md:text-4xl text-sky-800 mb-4 md:mb-8 text-center">
+          <h2 className="font-bold text-xl md:text-4xl text-sky-800 mb-4 md:mb-8 text-center">
             {t("activities.title")}
-          </h1>
+          </h2>
         </div>
         <div className="flex flex-row flex-wrap justify-center gap-2 ">
           {mockActivities.map((activity, index) => (
