@@ -56,7 +56,7 @@ const ContactForm = () => {
       const formEl = event?.target as HTMLFormElement;
       const fd = new FormData(formEl);
       console.log("all keys:", Array.from(fd.keys()));
-      console.log("token:", fd.get("cf-turnstile-response"));
+      console.log("token:", fd.get("turnstileToken"));
       // 2) Verify Turnstile
       const verifyRes = await fetch("/api/verify-turnstile", {
         method: "POST",

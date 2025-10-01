@@ -3,7 +3,11 @@ import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
   const form = await req.formData();
-  const token = form.get("cf-turnstile-response") as string | null;
+
+  // Ưu tiên tên bạn kiểm soát; fallback tên mặc định nếu cần
+  const token =
+    (form.get("turnstileToken") as string | null) ||
+    (form.get("cf-turnstile-response") as string | null);
 
   if (!token) {
     return NextResponse.json(
@@ -22,6 +26,7 @@ export async function POST(req: Request) {
       }),
     }
   );
+
   const data = await r.json();
   return NextResponse.json(data);
 }
