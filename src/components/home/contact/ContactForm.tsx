@@ -10,9 +10,14 @@ import { Constants } from "@/lib/constant";
 import { Button } from "@/components/ui/button";
 import { useTrans } from "@/hooks/useTrans";
 import { Card, CardContent } from "@/components/ui/card";
+import { toast } from "sonner";
+import { cn } from "@/lib/utils";
+import TurnstileWidget from "@/components/common/turnsil-widget/TurnstileWidget";
 
 const ContactForm = () => {
   const { t } = useTrans();
+  const [loading, setLoading] = React.useState(false);
+
   // Define schema using Zod
   const formSchema = z.object({
     name: z
@@ -44,8 +49,24 @@ const ContactForm = () => {
   });
 
   // Submit handler
-  const submitForm: SubmitHandler<FormData> = async (values) => {
-    console.log(values);
+  const submitForm: SubmitHandler<FormData> = async (values, e) => {
+    setLoading(true);
+
+    // 1) cf-turnstile-response
+    const formEl = e?.target as HTMLFormElement;
+    const fd = new FormData(formEl);
+
+    // 2) Verify Turnstile
+    const verifyRes = await fetch("/api/verify-turnstile", {
+      method: "POST",
+      body: fd,
+    });
+    const verify = await verifyRes.json();
+    if (!verify?.success) {
+      toast.error(t("form.try_again"));
+      return;
+    }
+
     const data = {
       ...values,
       submitDate: new Date().toLocaleString("vi-VN", {
@@ -53,6 +74,7 @@ const ContactForm = () => {
       }),
     };
     try {
+      setLoading(true);
       const res = await fetch("/api/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -60,12 +82,12 @@ const ContactForm = () => {
       });
       const dataRes = await res.json();
       if (!res.ok) throw new Error(dataRes.error || "Submit failed");
-      // setMsg("Đã gửi thành công!");
-      // form.reset();
+      toast.success(t("form.success"));
     } catch (err: any) {
-      // setMsg(err.message || "Có lỗi xảy ra");
+      toast.error(err.message || t("form.try_again"));
+      setLoading(false);
     } finally {
-      // setLoading(false);
+      setLoading(false);
     }
   };
   return (
@@ -133,9 +155,17 @@ const ContactForm = () => {
                 </p>
               </div>
               <div className="w-full flex justify-center md:justify-start">
-                <Button className="h-12 rounded-3xl min-w-fit min-[1920px]:w-64 font-bold text-lg bg-sky-900 text-white hover:bg-red-700 transition delay-150 duration-300 ease-in-out">
+                <Button
+                  className={cn(
+                    "cursor-pointer h-12 rounded-3xl min-w-fit min-[1920px]:w-64 font-bold text-lg bg-sky-900 text-white hover:bg-red-700 transition delay-150 duration-300 ease-in-out",
+                    loading && "cursor-not-allowed opacity-50"
+                  )}
+                  type="submit"
+                  disabled={loading}
+                >
                   <span>{t("header.register_button")}</span>
-                </Button>{" "}
+                </Button>
+                <TurnstileWidget />
               </div>
             </div>
           </form>

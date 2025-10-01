@@ -71,6 +71,7 @@
     "success": "Gửi thông tin thành công",
     "error": "Gửi thông tin thất bại",
     "policy_unchecked": "Vui lòng đọc và đồng ý với chính sách của chúng tôi",
-    "invalid_length": "Vui lòng nhập đủ thông tin"
+    "invalid_length": "Vui lòng nhập đủ thông tin",
+    "try_again": "Hệ thống đang bận, vui lòng thử lại sau"
   }
 }

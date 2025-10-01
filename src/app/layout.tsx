@@ -12,6 +12,8 @@ import { getServerTranslations } from "@/i18n";
 import { getLocale } from "@/i18n/utils";
 import TranslationsProvider from "@/components/providers/TranslationsProvider";
 import { SuspenseMotion } from "@/components/common/Suspense";
+import { Toaster } from "@/components/ui/sonner";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -56,7 +58,14 @@ export default async function RootLayout({
   const { resources } = await getServerTranslations(locale);
   return (
     <>
-      <html lang="en">
+      <html lang="vi">
+        <head>
+          <Script
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+            async
+            defer
+          />
+        </head>
         <body
           className={`${wixMadeforDisplay.variable} ${wixMadeforText.variable} antialiased relative flex min-h-screen flex-col overflow-x-hidden`}
         >
@@ -69,8 +78,9 @@ export default async function RootLayout({
                 </>
               }
             >
-              {children}{" "}
+              {children}
             </Suspense>
+            <Toaster position="top-right" />
           </TranslationsProvider>
           {/* <TranslationsProvider/> */}
         </body>
