@@ -1,5 +1,6 @@
 import { MaxWidthWrapper } from "@/components/common/MaxWidthWrapper";
 import { HeroCarousel } from "@/components/hero/HeroCarousel";
+import About from "@/components/home/about-us/About";
 import { ActivityGallery } from "@/components/home/activities/ActivityGallery";
 import { Contact } from "@/components/home/contact/Contact";
 import { CourseList } from "@/components/home/courses/CourseList";
@@ -13,6 +14,9 @@ export const HomeContainer = () => {
     <>
       <HeroCarousel />
       <MaxWidthWrapper>
+        <div className="my-8" id="about-us">
+          <About />
+        </div>
         <div className="my-8" id="courses">
           <CourseList />
         </div>
