@@ -48,7 +48,7 @@ export const Header = ({ className }: { className?: string }) => {
       <header className="relative flex h-full flex-col justify-end py-2">
         <MaxWidthWrapper>
           <div className="flex h-[57px] items-center justify-between">
-            <div className="flex flex-col justify-between gap-y-1.5">
+            <div className="flex flex-row justify-between items-center gap-y-1.5">
               <Link href="/">
                 <img
                   src="/assets/icons/logo.jpg"
@@ -58,9 +58,9 @@ export const Header = ({ className }: { className?: string }) => {
                   className="h-16 w-auto rounded-2xl"
                 />
               </Link>
-              {/* <span className="text-xs">
-                {"To be Your wings to be the future!"}
-              </span> */}
+              <span className="font-bold text-xl text-sky-800">
+                {"Starfish Center"}
+              </span>
             </div>
 
             <div className="ml-auto hidden h-full items-center md:flex">

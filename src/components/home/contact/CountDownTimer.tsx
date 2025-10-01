@@ -44,7 +44,7 @@ function FlipDigit({ value, label }: { value: string; label?: string }) {
 
   return (
     <div className="flex flex-col items-center gap-1">
-      <div className="relative h-4 w-4 sm:w-8 sm:h-8 lg:h-14 lg:w-14 select-none">
+      <div className="relative h-8 w-8 md:h-10 md:w-10 lg:h-14 lg:w-14 select-none">
         {/* Static back plate */}
         <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-muted to-muted/70 shadow-inner" />
 

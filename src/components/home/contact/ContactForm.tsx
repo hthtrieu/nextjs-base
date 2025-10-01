@@ -49,35 +49,34 @@ const ContactForm = () => {
   });
 
   // Submit handler
-  const submitForm: SubmitHandler<FormData> = async (values, e) => {
-    setLoading(true);
-
-    // 1) cf-turnstile-response
-    const formEl = e?.target as HTMLFormElement;
-    const fd = new FormData(formEl);
-
-    // 2) Verify Turnstile
-    const verifyRes = await fetch("/api/verify-turnstile", {
-      method: "POST",
-      body: fd,
-    });
-    const verify = await verifyRes.json();
-    if (!verify?.success) {
-      toast.error(t("form.try_again"));
-      return;
-    }
-
-    const data = {
-      ...values,
-      submitDate: new Date().toLocaleString("vi-VN", {
-        timeZone: "Asia/Bangkok",
-      }),
-    };
+  const submitForm: SubmitHandler<FormData> = async (values, event) => {
     try {
       setLoading(true);
+      // 1) cf-turnstile-response
+      const formEl = event?.target as HTMLFormElement;
+      const fd = new FormData(formEl);
+      console.log("all keys:", Array.from(fd.keys()));
+      console.log("token:", fd.get("cf-turnstile-response"));
+      // 2) Verify Turnstile
+      const verifyRes = await fetch("/api/verify-turnstile", {
+        method: "POST",
+        body: fd,
+      });
+      const verify = await verifyRes.json();
+      console.log("verify", verify);
+      if (!verify?.success) {
+        throw new Error(t("form.try_again"));
+      }
+
+      const data = {
+        ...values,
+        submitDate: new Date().toLocaleString("vi-VN", {
+          timeZone: "Asia/Bangkok",
+        }),
+      };
       const res = await fetch("/api/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        // headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
       const dataRes = await res.json();
@@ -157,7 +156,7 @@ const ContactForm = () => {
               <div className="w-full flex justify-center md:justify-start">
                 <Button
                   className={cn(
-                    "cursor-pointer h-12 rounded-3xl min-w-fit min-[1920px]:w-64 font-bold text-lg bg-sky-900 text-white hover:bg-red-700 transition delay-150 duration-300 ease-in-out",
+                    "cursor-pointer h-12 rounded-3xl min-w-fit font-bold text-lg bg-sky-900 text-white hover:bg-red-700 transition delay-150 duration-300 ease-in-out",
                     loading && "cursor-not-allowed opacity-50"
                   )}
                   type="submit"

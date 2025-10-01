@@ -12,7 +12,7 @@ export default function TurnstileWidget() {
     <div
       className="cf-turnstile"
       data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
-      data-theme="light" // tuỳ chọn
+      data-response-field-name="turnstileToken"
     />
   );
 }
