@@ -34,6 +34,10 @@ export const Footer = () => {
               <span className="text-xs">
                 {"To be Your wings to be the future!"}
               </span>
+              {/* add copyright */}
+              <span className="text-xs">
+                {"© 2025 Starfish English Center. All rights reserved."}
+              </span>
             </div>
 
             <div className="md:hidden" id="social-sm">
@@ -68,28 +72,33 @@ export const Footer = () => {
           <div className="text-center md:text-left" id="contact">
             <div className="flex flex-col gap-y-1.5 text-sm md:text-base">
               <h3 className="text-xl underline">Liên hệ</h3>
-              <span>Email: centerstarfish34@gmail.com</span>
-              <span>Phone: 0939027417</span>
-              <span>Địa chỉ: 34 Nguyễn Thần Hiến, Ngữ Hành Sơn, Đà Nẵng</span>
+              <span className="text-sm">Email: centerstarfish34@gmail.com</span>
+              <span className="text-sm">Phone: 0939027417</span>
+              <span className="text-sm">
+                Địa chỉ: 34 Nguyễn Thần Hiến, Ngữ Hành Sơn, Đà Nẵng
+              </span>
             </div>
           </div>
           <div className="hidden md:block" id="social-md">
             <div className="flex gap-x-4">
-              <Link href="https://www.facebook.com/profile.php?id=100057569344901">
+              <Link
+                href="https://www.facebook.com/profile.php?id=100057569344901"
+                target="_blank"
+              >
                 <img
                   src="/assets/icons/facebook.svg"
                   className="w-6 h-6 md:w-8 md:h-8"
                   alt="facebook"
                 />
               </Link>
-              <Link href="https://www.tiktok.com/">
+              <Link href="https://www.tiktok.com/" target="_blank">
                 <img
                   src="/assets/icons/tiktok.svg"
                   className="w-8 h-8"
                   alt="tiktok"
                 />
               </Link>
-              <Link href="https://zalo.me/0939027417">
+              <Link href="https://zalo.me/0939027417" target="_blank">
                 <img
                   src="/assets/icons/zalo.svg"
                   className="w-8 h-8 text-white"

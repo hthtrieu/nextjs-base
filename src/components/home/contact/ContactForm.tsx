@@ -55,15 +55,12 @@ const ContactForm = () => {
       // 1) cf-turnstile-response
       const formEl = event?.target as HTMLFormElement;
       const fd = new FormData(formEl);
-      console.log("all keys:", Array.from(fd.keys()));
-      console.log("token:", fd.get("turnstileToken"));
       // 2) Verify Turnstile
       const verifyRes = await fetch("/api/verify-turnstile", {
         method: "POST",
         body: fd,
       });
       const verify = await verifyRes.json();
-      console.log("verify", verify);
       if (!verify?.success) {
         throw new Error(t("form.try_again"));
       }
@@ -153,7 +150,7 @@ const ContactForm = () => {
                   chúng tôi.
                 </p>
               </div>
-              <div className="w-full flex justify-center md:justify-start">
+              <div className="w-full flex flex-col gap-2 justify-start nowrap md:flex-row md:justify-between">
                 <Button
                   className={cn(
                     "cursor-pointer h-12 rounded-3xl min-w-fit font-bold text-lg bg-sky-900 text-white hover:bg-red-700 transition delay-150 duration-300 ease-in-out",
@@ -164,7 +161,9 @@ const ContactForm = () => {
                 >
                   <span>{t("header.register_button")}</span>
                 </Button>
-                <TurnstileWidget />
+                <div className="w-full">
+                  <TurnstileWidget />
+                </div>
               </div>
             </div>
           </form>

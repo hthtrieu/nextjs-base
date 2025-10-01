@@ -58,7 +58,7 @@ export const Header = ({ className }: { className?: string }) => {
                   className="h-16 w-auto rounded-2xl"
                 />
               </Link>
-              <span className="font-bold text-xl text-sky-800">
+              <span className="font-bold text-base md:text-xl text-sky-800">
                 {"Starfish Center"}
               </span>
             </div>
