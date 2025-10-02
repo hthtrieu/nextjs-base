@@ -46,7 +46,7 @@ export default function About({
   };
 
   return (
-    <section
+    <div
       className="relative isolate overflow-hidden rounded-2xl bg-white p-6 md:p-10 shadow-sm ring-1 ring-slate-100"
       aria-labelledby="about-heading"
     >
@@ -141,6 +141,6 @@ export default function About({
           </figure>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

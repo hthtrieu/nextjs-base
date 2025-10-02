@@ -32,7 +32,7 @@ export const Header = ({ className }: { className?: string }) => {
     }
   }, []);
   return (
-    <div
+    <header
       className={cn(
         "fixed inset-x-0 top-0 z-[100] border-none transition-all ",
         {
@@ -45,10 +45,10 @@ export const Header = ({ className }: { className?: string }) => {
         className
       )}
     >
-      <header className="relative flex h-full flex-col justify-end py-2">
+      <div className="relative flex h-full flex-col justify-end py-2">
         <MaxWidthWrapper>
           <div className="flex h-[57px] items-center justify-between">
-            <div className="flex flex-row justify-between items-center gap-y-1.5">
+            <nav className="flex flex-row justify-between items-center gap-y-1.5">
               <Link href="/">
                 <img
                   src="/assets/icons/logo.jpg"
@@ -61,7 +61,7 @@ export const Header = ({ className }: { className?: string }) => {
               <span className="font-bold text-base md:text-xl text-sky-800">
                 {"Starfish Center"}
               </span>
-            </div>
+            </nav>
 
             <div className="ml-auto hidden h-full items-center md:flex">
               <div className="flex items-center gap-x-2 md:gap-x-4 lg:gap-x-6 xl:gap-x-8">
@@ -99,7 +99,7 @@ export const Header = ({ className }: { className?: string }) => {
             </div>
           </div>
         </MaxWidthWrapper>
-      </header>
-    </div>
+      </div>
+    </header>
   );
 };

@@ -16,30 +16,30 @@ export const HomeContainer = () => {
       <LocalBusinessJsonLd />
       <HeroCarousel />
       <MaxWidthWrapper>
-        <div className="my-8" id="about">
+        <section className="my-8" id="about">
           <About />
-        </div>
-        <div className="my-8" id="courses">
+        </section>
+        <section className="my-8" id="courses">
           <CourseList />
-        </div>
-        <div className="my-8">
+        </section>
+        <section id="promotions" className="my-8">
           <PromotionCarousel />
-        </div>
+        </section>
       </MaxWidthWrapper>
-      <div className="my-8">
+      <section id="activities" className="my-8">
         <ActivityGallery />
-      </div>
+      </section>
       <MaxWidthWrapper>
-        <div className="my-8">
+        <section id="top-students" className="my-8">
           <StudentCarousel />
-        </div>
+        </section>
       </MaxWidthWrapper>
-      <div className="my-8" id="facilities">
+      <section className="my-8" id="facilities">
         <FacilityCarousel />
-      </div>
-      <div className="my-8" id="contact">
+      </section>
+      <section className="my-8" id="contact">
         <Contact />
-      </div>
+      </section>
     </>
   );
 };

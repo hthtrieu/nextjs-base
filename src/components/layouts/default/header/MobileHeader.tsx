@@ -7,6 +7,7 @@ import { cn } from "../../../../lib/utils";
 import Link from "next/link";
 import { useEventListener } from "@/hooks/user-event-listener";
 import { useTrans } from "@/hooks/useTrans";
+import { Constants } from "@/lib/constant";
 
 const MobileHeader = () => {
   const [open, setOpen] = useState(false);
@@ -60,6 +61,23 @@ const MobileHeader = () => {
                   className="h-16 w-auto rounded-2xl"
                 />
               </Link>
+              <ul className="flex flex-col items-center gap-x-2">
+                {Constants.HEADER_URLS.map(
+                  (item: { label: string; href: string }, index) => (
+                    <li key={index} className="w-full h-fit min-h-8">
+                      <Link
+                        href={item?.href}
+                        className={cn(
+                          "text-base underline-offset-4 hover:text-sky-800 font-bold"
+                        )}
+                        onClick={() => setOpen(false)}
+                      >
+                        {t(item.label)}
+                      </Link>
+                    </li>
+                  )
+                )}
+              </ul>
             </div>
             <button onClick={handleOpenMenu}>
               <SidebarCloseIcon fontSize={30} />

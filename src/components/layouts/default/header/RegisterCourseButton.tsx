@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { useTrans } from "@/hooks/useTrans";
 import React from "react";
