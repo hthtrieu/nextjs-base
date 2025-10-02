@@ -1,6 +1,3 @@
-"use client";
-import { useTrans } from "@/hooks/useTrans";
-import Autoplay from "embla-carousel-autoplay";
 import React from "react";
 import {
   Carousel,
@@ -10,21 +7,11 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { PromotionCard } from "./PromotionCard";
-import { motion } from "framer-motion";
 import mockPromotions from "./mock/promotion.json";
 export const PromotionCarousel = () => {
-  const { t } = useTrans();
   return (
-    <motion.div
+    <div
       key={"top_students.title"}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ amount: 0.5, once: true }}
-      variants={{
-        hidden: { opacity: 0, y: 40 },
-        visible: { opacity: 1, y: 0 },
-      }}
-      transition={{ delay: 0.5 }}
       // transition={{ duration: 0.5, ease: "easeInOut" }}
     >
       <div className="flex flex-col gap-4 md:gap-8">
@@ -47,6 +34,7 @@ export const PromotionCarousel = () => {
                       name: promotion.name,
                       image: promotion.image,
                     }}
+                    index={index}
                   />
                 </div>
               </CarouselItem>
@@ -62,6 +50,6 @@ export const PromotionCarousel = () => {
           </div>
         </Carousel>
       </div>
-    </motion.div>
+    </div>
   );
 };
